@@ -1,0 +1,140 @@
+<html>
+<head>
+<script language="JavaScript" type="text/JavaScript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+
+function searchloop()
+{
+	document.form3.searchtype.value = "relatedsearch";
+	
+	var canFormat=0;
+	var ua = navigator.userAgent;
+	if(ua.indexOf('Gecko')>=0) canFormat = 1;
+	
+	if(canFormat != 1)
+    {
+		var selright = document.selection;	//以文找文
+    
+		if (selright.type == 'Text')
+		{
+			var newRangeR = selright.createRange();
+			var textr = newRangeR.text;
+			if(textr!='')
+			{	
+				document.form3.searchcontent.value=escape(textr);
+				document.form3.submit();
+			}
+			return;
+		}
+		else
+		{
+			alert("系統無法搜尋，可能是您尚未選取一段文字或系統不支援此檔案格式");
+		}
+	}
+    else
+    {
+		var selright = document.getSelection();	//以文找文
+		if(selright != '')
+		{
+			document.form3.searchcontent.value = escape(selright);
+			document.form3.submit();
+			return;
+		}
+		else
+		{
+			alert("系統無法搜尋，可能是您尚未選取一段文字或系統不支援此檔案格式");
+		}
+		
+    }
+}
+
+function keywordsearch()
+{
+
+	document.form3.searchtype.value = "keywordsearch";
+	document.form3.searchcontent.value = escape(document.form1.keyword.value);
+	document.form3.submit();
+		
+	return false;
+}
+
+</script>
+</head>
+<body>
+<center>
+<form name="form3" method="post" action="http://www.scupio.com/search/websearch2/link.aspx"
+			target="_blank" ID="form3">
+			<input type="hidden" name="searchtype" value="relatedsearch" ID="Hidden1"> <input type="hidden" name="searchcontent" size="0" ID="Hidden2">
+			<input type="hidden" name="dataserver" value="databank.scupio.com" ID="Hidden3">
+			<input type="hidden" name="doccenterid" value="4" ID="Hidden4">
+			<input type="hidden" name="lang" value="cht" ID="Hidden5">
+		</form>
+		<table width="155" border="0" cellpadding="0" cellspacing="0" ID="Table1">
+			<tr>
+				<form name="form1" method="post" action="http://www.scupio.com/search/websearch2/link.aspx" target="_blank" ID="form1" onsubmit="return keywordsearch();">
+					<td width="121" height="25">
+						<input name="keyword" type="text" size="16" ID="keyword">
+					</td>
+					<td width="34" align="right">
+						<img src="http://blog.scupio.com/websearchbar/image/schb01.gif" name="Image111" width="26"
+							height="22" border="0" id="Image11" onclick="keywordsearch();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image111','','http://blog.scupio.com/websearchbar/image/schb02.gif',1)">
+					</td>
+			</tr>
+			</form>
+			<tr>
+				<td height="35" colspan="2">
+					<table width="153" height="28" border="0" cellpadding="0" cellspacing="0" bgcolor="#447AC4"
+						ID="Table2">
+						<tr>
+							<td width="91" align="center" valign="middle">
+								<img src="http://blog.scupio.com/websearchbar/image/gbrs01.gif"  alt="請在網頁中選取(反白)一段您想搜尋的主題或文章，按下此鈕，立刻找尋相關文章" name="Image311" width="83"
+									height="23" border="0" id="Image31" onclick="searchloop();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image311','','http://blog.scupio.com/websearchbar/image/gbrs02.gif',1)"></td>
+							<td width="62" valign="middle"><a href="http://blog.scupio.com/websearchbar/howtouse/related.htm"><font color="#FFFFFF" size="-1">如何使用</font></a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="18" colspan="2" align="right" valign="bottom"><a href="http://www.scupio.com.tw/" target="_blank"><img src="http://blog.scupio.com/websearchbar/image/pwb-1.gif" width="131" height="21"
+							border="0"></a></td>
+			</tr>
+		</table>
+
+
+
+</center>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body{
+	margin: 0px;
+	background-attachment: fixed;
+	background-color: #ffffff;
+	background-repeat: repeat;
+	overflow:scroll;
+}
+img{
+	border:0;}
+h4{
+	color:#996699}
+A{
+	text-decoration:none;color:#7C00A5}
+A:hover{
+	text-decoration:none;color:#FF9F50}
+body{color:#666666;}
+A,TD,th,BODY,INPUT,TEXTAREA,pre{
+	font:normal normal normal 10pt /16px verdana;}
+TEXTAREA,input{
+	background-color:#E0EAF5;}
+select{
+	font-size:9pt;
+	background-color:#EBF2F8;}
+img{border:0;}
+.top_bg{
+	background-image: url(./image/bup.jpg);
+	}
+.message{color:red;}
+.amethyst{color:#6D5885;}
+.fclr{color:blue;}
+.popper
+{
+  position : absolute;
+  visibility : hidden;
+}
+.info {
+	background:#ECECEC;}
+.bgcolor{
+	background:#B2D8F8; }
+.login {
+	background-image: url(./image/login_bg.gif);
+	background-repeat: repeat-x;
+	color: #6699CC;
+	font-size: 10pt;
+	font-weight: bold;
+	padding:0px;
+	margin: 0px; }
+.btm{
+	BORDER: #002D96 1px solid;
+	FONT-SIZE: 12px;
+	COLOR: black;
+	background-color: #9DBCEA;
+}
+.tx {border: 1px dotted #C0C0C0; padding: 1px; background-color: #EAEFDE;line-height:1.5}
+.tx1 {border: 1px dotted #C0C0C0; padding: 1px; background-color: #FF99CC;line-height:1.5}
+.tf1{
+	font-size:13pt;COLOR: #CC0066;}

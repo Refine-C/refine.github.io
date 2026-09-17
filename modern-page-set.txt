@@ -1,1 +1,0 @@
-First responsive multi-page release prepared on branch rwd-modernization.
